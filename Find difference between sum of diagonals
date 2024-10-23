@@ -1,0 +1,29 @@
+https://www.geeksforgeeks.org/problems/find-difference-between-sum-of-diagonals1554/1?page=5&category=Matrix&sortBy=submissions
+
+
+
+class Solution {
+  public:
+    int diagonalSumDifference(int N, vector<vector<int>> Grid) {
+        // code here
+    int a=0;
+    int b=0;
+    int n=Grid.size();
+    int sum=0;
+    while(b<n && a<n )
+    {
+      sum+=Grid[a][b];
+      a++;
+      b++;
+    }
+    a=0;
+    b=n-1;
+    while(b>=0 && a<n)
+    {
+        sum-=Grid[a][b];
+        a++;
+        b--;
+    }
+    return abs(sum);
+    }
+};
