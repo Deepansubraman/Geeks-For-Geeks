@@ -1,0 +1,22 @@
+class Solution {
+  public:
+    // Function returns the second
+    // largest elements
+    int getSecondLargest(vector<int> &arr) {
+        if(arr.size()<2)
+        {
+            return -1;
+        }
+        sort(arr.begin,arr.end,greater<int>());
+        for(int i=0;i<arr.size();i++)
+        {
+            if(arr[i]<arr[0])
+            {
+                return -1;
+            }
+        }
+        
+        return -1;
+        // Code Here
+    }
+};
