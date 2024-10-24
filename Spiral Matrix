@@ -1,0 +1,66 @@
+https://www.geeksforgeeks.org/problems/spiral-matrix--141631/1?page=4&category=Matrix&sortBy=submissions
+
+
+
+
+
+
+
+class Solution{
+
+	public:
+	int findK(vector<vector<int>> &a, int n, int m, int k)
+    {
+       // code here
+        vector<int> b;
+        int top = 0;
+        int row = a.size();
+        int col = a[0].size();
+        int bot = row - 1;
+        int left = 0;
+        int right = col -1;
+        int dir = 1;
+        while(top<=bot && left<=right)
+        {
+            if(dir == 1)
+            {
+                for(int i=left;i<=right;i++)
+                {
+                    b.push_back(a[top][i]);
+                }
+                top++;
+            }
+            else if(dir == 2)
+            {
+                for(int i=top;i<=bot;i++)
+                {
+                    b.push_back(a[i][right]);
+                }
+                right--;
+            }
+            else if(dir==3)
+            {
+                for(int i=right;i>=left;i--)
+                {
+                    b.push_back(a[bot][i]);
+                }
+                bot--;
+            }
+            else if(dir == 4)
+            {
+                for(int i=bot;i>=top;i--)
+                {
+                    b.push_back(a[i][left]);
+                }
+                left++;
+            }
+            dir++;
+            if(dir==5)
+            {
+                dir=1;
+            }
+        }
+        return b[k-1];// Your code goes here
+    }
+
+};
