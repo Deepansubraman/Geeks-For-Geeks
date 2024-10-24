@@ -1,0 +1,15 @@
+https://www.geeksforgeeks.org/problems/swap-two-numbers3844/1?page=5&difficulty=Basic&sortBy=submissions
+
+
+
+class Solution{   
+public:
+    pair<int, int> get(int a, int b){
+        //complete the function here
+        int temp;
+        temp=a;
+        a=b;
+        b=temp;
+        return {a,b};
+    }
+};
