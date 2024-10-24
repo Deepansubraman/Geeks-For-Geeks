@@ -1,0 +1,48 @@
+
+https://www.geeksforgeeks.org/problems/uncommon-characters4932/1?page=4&difficulty=Basic&sortBy=submissions
+
+
+class Solution
+{
+    public:
+        string UncommonChars(string A, string B)
+        {
+            // code here
+            string N="";
+           int a[26];
+           int b[26];
+           for(int i=0;i<26;i++)
+           {
+               a[i]=0;
+           }
+           for(int i=0;i<26;i++)
+           {
+               b[i]=0;
+           }
+           for(int i=0;i<A.size();i++)
+           {
+               int c=A[i];
+               int d=c-'a';
+               a[d]++;
+           }
+           for(int i=0;i<B.size();i++)
+           {
+               int c=B[i];
+               int d=c-'a';
+               b[d]++;
+           }
+           for(int i=0;i<26;i++)
+           {
+               if((a[i]==0 && b[i]>0) || (a[i]>0 && b[i]==0))
+               {
+                   char s=i+'a';
+                   N.push_back(s);
+               }
+           }
+           if(N.size()==0)
+           {
+           return "-1";
+           }
+           return N;
+        }
+};
