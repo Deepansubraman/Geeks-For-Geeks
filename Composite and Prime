@@ -1,0 +1,43 @@
+https://www.geeksforgeeks.org/problems/composite-and-prime0359/1?page=1&category=Prime%20Number&sortBy=submissions
+
+
+
+
+class Solution {
+  public:
+    int Count(int l, int r) {
+        // Code here
+        vector<int>a;
+        for(int i=l;i<=r;i++)
+        {
+            if(i<=1)
+            {
+                continue;
+            }
+            else if(i==2)
+            {
+                a.push_back(i);
+            }
+            else
+            {
+            int count=0;
+            for(int j=2;j<=sqrt(i);j++)
+            {
+                if(i%j==0)
+                {
+                    count++;
+                    break;
+                }
+            }
+            if(count==0)
+            {
+                a.push_back(i);
+            }
+            }
+        }
+        int c=0;
+        c=r-l+1-a.size();
+        int size=c-a.size();
+        return abs(size);
+    }
+};
