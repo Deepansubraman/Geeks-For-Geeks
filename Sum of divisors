@@ -1,0 +1,43 @@
+https://www.geeksforgeeks.org/problems/sum-of-divisors3601/1?page=2&category=Numbers,number-theory&sortBy=submissions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Solution {
+  public:
+    long long int divSum(long long int n){
+        // code here
+        
+        int count=0;
+        for(long long int i=2;i<=sqrt(n);i++)
+        {
+            if(n%i==0)
+            {
+                long long int a=n/i;
+                if(a==i)
+                {
+                    count+=i;
+                }
+                if(a!=i)
+                {
+                    count=count+i+a;
+                    
+                }
+            }
+        }
+        return count+1;
+    }
+};
