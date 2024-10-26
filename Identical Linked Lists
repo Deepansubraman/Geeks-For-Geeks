@@ -1,0 +1,36 @@
+https://www.geeksforgeeks.org/problems/identical-linked-lists/1?page=2&category=Linked%20List&sortBy=submissions
+\
+
+
+
+
+class Solution {
+  public:
+    // Function to check if two linked lists are identical
+    bool areIdentical(struct Node *head1, struct Node *head2) {
+        // code here
+        vector<int>a;
+        vector<int>b;
+        while(head1!=NULL)
+        {
+            a.push_back(head1->data);
+            head1=head1->next;
+        }
+        while(head2!=NULL)
+        {
+            b.push_back(head2->data);
+            head2=head2->next;
+        }
+        if(a.size()!=b.size())
+        {
+            return false;
+        }
+        for(int i=0;i<a.size();i++)
+        {
+        if(a[i]!=b[i])
+        {
+            return false;
+        }
+        }return true;
+    }
+};
