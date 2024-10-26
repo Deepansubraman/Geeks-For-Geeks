@@ -1,0 +1,28 @@
+https://www.geeksforgeeks.org/problems/find-the-most-frequent-digit4432/1?page=7&category=Hash&sortBy=submissions
+
+
+
+
+
+
+int solve(string N)
+{
+    //code here
+    map<char,int>a;
+    for(int i=0;i<N.size();i++)
+    {
+        a[N[i]]++;
+    }
+    int t=0;
+    int c;
+    for(auto x:a)
+    {
+        if(t<=x.second)
+        {
+            t=x.second;
+            c=x.first - '0';
+        }
+    }
+    return c;
+    
+}
