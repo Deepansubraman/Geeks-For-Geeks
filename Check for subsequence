@@ -1,0 +1,22 @@
+https://www.geeksforgeeks.org/problems/check-for-subsequence4930/1?page=6&difficulty=Basic&sortBy=submissions
+
+
+
+
+
+class Solution{
+    public:
+    bool isSubSequence(string A, string B) 
+    {
+    int a=0,b=0;
+    while(a<A.size() && b<B.size())
+    {
+        if(A[a]==B[b])
+        {
+            a++;
+        }
+        b++;
+    }
+    return (a==A.size());
+    }
+};
