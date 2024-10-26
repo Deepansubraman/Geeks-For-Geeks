@@ -1,0 +1,37 @@
+
+https://www.geeksforgeeks.org/problems/sum-of-numbers-in-string-1587115621/1?page=5&difficulty=Basic&sortBy=submissions
+
+
+
+
+class Solution
+{
+    public:
+    //Function to calculate sum of all numbers present in a string.
+    int findSum(string str)
+    {
+         long long int temp=0;
+        long long int sum=0;
+        for(int i=0;i<str.size();i++)
+        {
+            int a=str[i];
+            if(a>=48 && a<=57)
+            {
+                int b=a-48;
+                temp=temp*10+b;
+            }
+            else
+            {
+                sum=sum+temp;
+                temp=0;
+            }
+            
+        }
+        if(temp!= 0)
+        {
+            return sum+temp;
+        }
+        return sum;
+    	
+    }
+};
