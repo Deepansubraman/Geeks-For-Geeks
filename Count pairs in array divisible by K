@@ -1,0 +1,32 @@
+https://www.geeksforgeeks.org/problems/count-pairs-in-array-divisible-by-k/1
+
+
+
+
+
+
+class Solution
+{
+    public:
+    long long countKdivPairs(int A[], int n, int K)
+    {
+        //code here
+        long long int count=0;
+        unordered_map<int,int>mp;
+        long long int b;
+        for(int i=0;i<n;i++)
+        {
+            int rem=A[i]%K;
+            if(rem==0)
+            {
+                count=count+mp[0];
+            }
+            else
+            {
+                count=count+mp[K-rem];
+            }
+            mp[rem]++;
+        }
+        return count;
+    }
+};
