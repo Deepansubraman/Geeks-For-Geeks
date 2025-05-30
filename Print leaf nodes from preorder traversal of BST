@@ -1,0 +1,32 @@
+class Solution {
+  public:
+  
+  
+  void func(vector<int>arr,vector<int>&ans)
+  {
+      if(arr.size()==0)
+      return;
+      if(arr.size()==1)
+      {
+          ans.push_back(arr[0]);
+          return;
+      }
+      int n=arr.size();
+      int t=arr[0];
+      vector<int>v1,v2;
+      for(int i=1;i<n;i++)
+      {
+          if(arr[i]<t)v1.push_back(arr[i]);
+          else v2.push_back(arr[i]);
+      }
+      func(v1,ans);
+      func(v2,ans);
+      return;
+  }
+    vector<int> leafNodes(vector<int>& preorder) {
+        // code here
+        vector<int>ans;
+        func(preorder,ans);
+        return ans;
+    }
+};
